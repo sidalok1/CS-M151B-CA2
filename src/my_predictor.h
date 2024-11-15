@@ -11,7 +11,7 @@ public:
 
 class my_predictor : public branch_predictor {
 public:
-#define HISTORY_LENGTH	15
+#define HISTORY_LENGTH	10
 #define TABLE_BITS	15
 	my_update u;
 	branch_info bi;
@@ -25,6 +25,7 @@ public:
 	branch_update *predict (branch_info & b) {
 		bi = b;
 		if (b.br_flags & BR_CONDITIONAL) {
+			//Gshare table index
 			u.index = 
 				  (history << (TABLE_BITS - HISTORY_LENGTH)) 
 				^ (b.address & ((1<<TABLE_BITS)-1));
