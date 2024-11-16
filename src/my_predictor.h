@@ -21,7 +21,7 @@ public:
 #define HISTORY_LENGTH	32
 #define TABLE_BITS	15
 #define BTB_BITS 8
-#define PERCEPTRON_BITS 8
+#define PERCEPTRON_BITS 16
 #define PERCEPTRON_MASK ((1 << PERCEPTRON_BITS) - 1)
 	my_update u;
 	branch_info bi;
